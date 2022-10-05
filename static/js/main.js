@@ -253,7 +253,7 @@
 		      },
 		      error: function() {
 
-		      	sLoader.fadeOut(); 
+		      	sLoader.fadeOut();
 		      	$('#message-warning').html("Something went wrong. Please try again.");
 		         $('#message-warning').fadeIn();
 
