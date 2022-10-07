@@ -1,13 +1,18 @@
 import re
+import os
 import smtplib
 from flask import Flask, render_template, send_file, request, jsonify
 
 app = Flask(__name__)
 
 
+EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
+
+
 @app.route("/")
 def home():
     return render_template("index.html")
+
 
 # downloading the resume on request
 @app.route('/download')
