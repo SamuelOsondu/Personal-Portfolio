@@ -47,7 +47,7 @@ def send_mail():
         return jsonify({"error": "Please enter your message. It should have at least 15 characters."})
 
     with smtplib.SMTP_SSL("smtp.gmail.com") as connection:
-        connection.login(user="samuelemailsend@gmail.com", password="iypzrlzfcdqfuejk")
+        connection.login(user="samuelemailsend@gmail.com", password=EMAIL_PASSWORD)
         connection.sendmail(
             from_addr="samuelemailsend@gmail.com",
             to_addrs="samuelosondu.py@gmail.com",
