@@ -6,7 +6,7 @@ from flask import Flask, render_template, send_file, request, jsonify
 app = Flask(__name__)
 
 
-EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
+EMAIL_PASSWORD = os.environ.get('EMAIL_PASSWORD', 'EMAIL_PASSWORD')
 
 
 @app.route("/")
