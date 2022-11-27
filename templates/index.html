@@ -387,271 +387,55 @@
    	<div class="row portfolio-content">
 
    		<div class="col-twelve">
-
    			<!-- portfolio-wrapper -->
 	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
 
+
+				 {% for project in projects %}
+
 	         	<div class="bgrid folio-item">
 	               <div class="item-wrap">
-	               	<img src="static/images/portfolio/space_invaders.png" alt="Space Invaders">
-	                  <a href="#modal-01" class="overlay">
+	               	<img src="{{project.project_img}}" alt="{{project.project_title}}">
+	                  <a href="#modal-{{project.id}}" class="overlay">
 	                     <div class="folio-item-table">
 	                     	<div class="folio-item-cell">
-		     					       <h3 class="folio-title">The Space Invaders Game</h3>
+		     					       <h3 class="folio-title">{{project.project_title}}</h3>
 		     					    	 <span class="folio-types">
-		     					       	  Game Development
+		     					       	  {{project.project_name}}
 		     					       </span>
 		     					   </div>
 	                     </div>
 	                  </a>
 	               </div>
 	        		</div> <!-- /folio-item -->
-	        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="static/images/portfolio/dangerous typing.png" alt="dangerous typing">
-	               	<a href="#modal-02" class="overlay">
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Dangerous Typing App</h3>
-		     					    	<span class="folio-types">
-		     					       	  App Development
-		     					      </span>
-		     					   </div>
-	                     </div>
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
+				{% endfor %}
 
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="static/images/portfolio/Type speed checker.png" alt="A Typing speed checker">
-	                  <a href="#modal-03" class="overlay">
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">A Typing speed Checker</h3>
-		     					    	<span class="folio-types">
-		     					       	  App Development
-		     					      </span>
-		     					   </div>
-	                     </div>
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="static/images/portfolio/breakout_game.png" alt="breakout game">
-	                  <a href="#modal-04" class="overlay">
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">The Breakout Game</h3>
-		     					    	<span class="folio-types">
-		     					       	  Game Development
-		     					      </span>
-		     					   </div>
-	                     </div>
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-
-	        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="static/images/portfolio/Furnise.png" alt="Furnise">
-	                  <a href="#modal-05" class="overlay">
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Furnise - ECommerce Site</h3>
-		     					    	<span class="folio-types">
-		     					       	  Backend Web Development
-		     					      </span>
-		     					   </div>
-	                     </div>
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="static/images/portfolio/Colour Pallet.png" alt="Colour Pallet">
-	                  <a href="#modal-06" class="overlay">
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Colour Pallet</h3>
-		     					    	<span class="folio-types">
-		     					       	  Image Processing
-		     					      </span>
-		     					   </div>
-	                     </div>
-	                  </a>
-	               </div>
-				</div> <!-- /folio-item -->
-
-	         	<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="static/images/portfolio/portfolio.png" alt="Portfolio">
-	                  <a href="#modal-07" class="overlay">
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-		     					       <h3 class="folio-title"> My Portfolio</h3>
-		     					    	 <span class="folio-types">
-		     					       	  Backend Web Development
-		     					       </span>
-		     					   </div>
-	                     </div>
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
 
 
 	            <!-- modal popups - begin
 	            ============================================================= -->
-	            <div id="modal-01" class="popup-modal slider mfp-hide">
+			 	{% for project in projects %}
+
+				   <div id="modal-{{project.id}}" class="popup-modal slider mfp-hide">
 
 				     	<div class="media">
-				     		<img src="static/images/portfolio/space_invaders.png" alt="" />
+				     		<img src="{{project.project_img}}" alt="{{project.project_title}}" />
 				     	</div>
 
 					   <div class="description-box">
-					      <h4>The Space Invaders</h4>
-					      <p> This is a simulation of the space invaders game.
-							  The player assumes a spaceship, fighting invaders attacking it,
-							  to protect its ship and of course its life..
-						  </p>
+					      <h4>{{project.project_title}}</h4>
+					      <p>{{project.project_description}}</p>
 
-					      <div class="categories">Game Development</div>
+					      <div class="categories">{{project.project_name}}</div>
 					   </div>
 
 			         <div class="link-box">
-			            <a href="https://github.com/SamuelOsondu/Space-Invader">Source Code</a>
+			            <a href="{{project.project_link}}">View</a>
 					      <a href="#" class="popup-modal-dismiss">Close</a>
 			         </div>
+					 </div> <!-- /modal-01 -->
+			   {% endfor %}
 
-				   </div> <!-- /modal-01 -->
-
-				   <div id="modal-02" class="popup-modal slider mfp-hide">
-
-				     	<div class="media">
-				     		<img src="static/images/portfolio/dangerous typing.png" alt="" />
-				     	</div>
-
-					   <div class="description-box">
-					      <h4>A Dangerous Typing App</h4>
-					      <p>This is an App built for writers to enhance their thinking speed.
-							  After a given time, it deletes the progress wiping all that was previously written. </p>
-
-					      <div class="categories">App Development</div>
-					   </div>
-
-			         <div class="link-box">
-			            <a href="https://github.com/SamuelOsondu/Dangerous-writing-App">Source Code</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>
-
-				   </div> <!-- /modal-02 -->
-
-				   <div id="modal-03" class="popup-modal slider mfp-hide">
-
-				     	<div class="media">
-				     		<img src="static/images/portfolio/Type speed checker.png" alt="" />
-				     	</div>
-
-					   <div class="description-box">
-					      <h4>Type speed checker</h4>
-						   <p> This App helps to rate typing, by counting down on a given time, how many words the
-							   individual types within that time. It can be used to improve one’s typing speed. </p>
-					      <div class="categories">App Development</div>
-					   </div>
-
-			         <div class="link-box">
-			            <a href="https://github.com/SamuelOsondu/TypeSpeed_Tracker">Source Code</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>
-
-				   </div> <!-- /modal-03 -->
-
-				   <div id="modal-04" class="popup-modal slider mfp-hide">
-
-				     	<div class="media">
-				     		<img src="static/images/portfolio/breakout_game.png" alt="" />
-				     	</div>
-
-					   <div class="description-box">
-					      <h4>The Breakout Game</h4>
-					      <p>This is a simulation of the breakout Game. The player attempts to use a ball to crack a
-							  wall pack of blocks while making sure the ball doesn’t get passed its position.</p>
-
-					      <div class="categories">Game Development</div>
-					   </div>
-
-			         <div class="link-box">
-			            <a href="https://github.com/SamuelOsondu/BreakOut_Game">Source Code</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>
-
-				   </div> <!-- /modal-04 -->
-
-				   <div id="modal-05" class="popup-modal slider mfp-hide">
-
-				     	<div class="media">
-				     		<img src="static/images/portfolio/Furnise.png" alt="" />
-				     	</div>
-
-					   <div class="description-box">
-					      <h4>Furnise</h4>
-					      <p> Furnise is an E-commerce site, built for furniture and house interior sales.
-							  It is secure and efficient for users.</p>
-
-					      <div class="categories">Back-End Web-Development</div>
-					   </div>
-
-			         <div class="link-box">
-			            <a href="https://furnise.herokuapp.com/">View</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>
-
-				   </div> <!-- /modal-05 -->
-
-				   <div id="modal-06" class="popup-modal slider mfp-hide">
-
-				     	<div class="media">
-				     		<img src="static/images/portfolio/Colour Pallet.png" alt="" />
-				     	</div>
-
-					   <div class="description-box">
-					      <h4>Colour Pallet</h4>
-					      <p>The colour pallet comes in handy while trying to get the colours out of an image.
-							  It is used to extract the colours present in a given picture.</p>
-
-					      <div class="categories">Image Processing</div>
-					   </div>
-
-			         <div class="link-box">
-			            <a href="https://github.com/SamuelOsondu/Colour-Pallet">Source Code</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>
-
-				   </div> <!-- /modal-06 -->
-
-				   <div id="modal-07" class="popup-modal slider mfp-hide">
-
-				     	<div class="media">
-				     		<img src="static/images/portfolio/portfolio.png" alt="" />
-				     	</div>
-
-					   <div class="description-box">
-					      <h4>My Portfolio</h4>
-					      <p>The backend of the website was built with the Python Flask Framework</p>
-
-					      <div class="categories">Back-End Web-Development</div>
-					   </div>
-
-			         <div class="link-box">
-			            <a href="http://samuelosonddu-portfolio.herokuapp.com/">View</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>
-
-				   </div> <!-- /modal-07 -->
 
 
 				   <!-- modal popups - end

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="static/login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="static/login/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" enctype='multipart/form-data' id="signup-form" class="signup-form" role="form" action="{{url_for('add_project')}}">
+                        <h2 class="form-title">ADD PROJECT</h2>
+                        {{ form.csrf_token }}
+
+                        <div class="form-group">
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            {% for message in messages %}
+                            <p>{{ message }}</p>
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+                        </div>
+
+
+                        <div class="form-group">
+                            {{ form.project_name(class="form-input", id="email", placeholder="Name")}}
+                        </div>
+                        <div class="form-group">
+                            {{ form.project_title(class="form-input", id="email", placeholder="Title")}}
+                        </div>
+                        <div class="form-group">
+                            {{ form.project_description(class="form-input", id="email", placeholder="Description")}}
+                        </div>
+                        <div class="form-group">
+                            {{ form.project_link(class="form-input", id="email", placeholder="Project Link")}}
+                        </div>
+                        <div class="form-group">
+                            {{ form.file(class="form-input", id="email", type="file")}}
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Add Project"/>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    <div>
+    <!-- JS -->
+    <script src="static/login/vendor/jquery/jquery.min.js"></script>
+    <script src="static/login/js/main.js"></script>
+
+</body>
+</html>
